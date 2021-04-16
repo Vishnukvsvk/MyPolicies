@@ -1,0 +1,17 @@
+import "tfplan/v2" as tfplan
+import "tfplan-functions" as plan
+import "strings"
+import "types"
+
+allFilestoreInstances = plan.find_resources("google_filestore_instance")
+print(allFilestoreInstances)
+
+maxsize = rule{
+    all allFilestoreInstances as _,rc{
+        (rc.change.after.file_shares[0].capacity_gb > 1000) and (rc.change.after.file_shares[0].capacity_gb < 10240)
+    }
+}
+
+main = rule{
+    maxsize
+}

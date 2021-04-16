@@ -1,0 +1,48 @@
+# this policy uses the sentinel tfplan/v2 import for terraform
+import "tfplan/v2" as tfplan
+import "strings"
+import "types"
+
+
+allVpc = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.type is "google_compute_network" and
+		resource_changes.mode is "managed" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"])
+}
+
+disable_autocreate_subnetwork = rule{
+    all allVpc as _,rc{
+        rc.change.after.auto_create_subnetworks is false
+    }
+}
+
+allSqlInstances = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.type is "google_sql_database_instance" and
+		resource_changes.mode is "managed" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"])
+}
+
+
+ip_block = rule{
+	all allSqlInstances as _ , rc {
+		(rc.change.after.settings[0] contains "ip_configuration") //or (rc.change.after_unknown.settings[0].ip_configuration is true) 
+	}
+}
+
+ipconfig = rule{
+    all allSqlInstances as _,rc {
+        any rc.change.after.settings[0].ip_configuration as _,ipc {
+            ipc.ipv4_enabled is false
+        } and
+        any rc.change.after_unknown.settings[0].ip_configuration as _,ipc {
+            ipc contains "private_network"
+        }
+    }
+}
+
+main = rule{
+    //disable_autocreate_subnetwork 
+    ip_block and ipconfig
+}

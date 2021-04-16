@@ -1,0 +1,22 @@
+import "tfplan-functions" as plan
+
+
+# Get all datastore clusters
+allClusters = plan.find_resources("google_container_cluster")
+
+# Filter to datastore clusters that do not enable storage DRS
+# Warnings will be printed for all violations since the last parameter is true
+violation1 = plan.filter_attribute_is_not_value(
+                              allClusters, "remove_default_node_pool", true, true)
+
+violation2 = plan.filter_attribute_is_not_value(
+                              allClusters, "initial_node_count", 1, true)
+
+# Main rule
+validated1 = length(violation1["messages"]) is 0
+validated2 = length(violation2["messages"]) is 0
+
+main = rule {
+  validated1 and validated2
+}
+

@@ -1,0 +1,20 @@
+import "tfplan/v2" as tfplan
+import "tfplan-functions" as plan
+import "strings"
+import "types"
+
+allDataprocClusters = plan.find_resources("google_dataproc_cluster")
+
+are_buckets_present = rule{
+    all allDataprocClusters as _,rc{
+        (rc.change.after.cluster_config[0].staging_bucket is not null) and 
+        (rc.change.after.cluster_config[0] contains "temp_bucket")
+    }
+}
+
+main = rule{
+    are_buckets_present
+}
+
+
+#graceful_decommission_timeout is also an attribute worth for policy
