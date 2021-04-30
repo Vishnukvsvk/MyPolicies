@@ -1,0 +1,17 @@
+import "tfplan/v2" as tfplan
+import "tfplan-functions" as plan
+import "strings"
+import "types"
+
+datafusion_instances = plan.find_resources("google_data_fusion_instance")
+
+logging_monitoing_enabled = rule{
+    all datafusion_instances as _,rc {
+        (rc.change.after.enable_stackdriver_logging is true) and
+        (rc.change.after.enable_stackdriver_monitoring is true)
+    }
+}
+
+main = rule{
+    logging_monitoing_enabled
+}

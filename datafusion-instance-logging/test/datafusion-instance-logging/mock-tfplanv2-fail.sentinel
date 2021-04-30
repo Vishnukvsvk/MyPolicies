@@ -1,0 +1,290 @@
+terraform_version = "0.14.10"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_data_fusion_instance.extended_instance": {
+			"address":        "google_data_fusion_instance.extended_instance",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "extended_instance",
+			"provider_name":  "registry.terraform.io/hashicorp/google-beta",
+			"tainted":        false,
+			"type":           "google_data_fusion_instance",
+			"values": {
+				"dataproc_service_account":      null,
+				"description":                   "My Data Fusion instance",
+				"enable_stackdriver_logging":    null,
+				"enable_stackdriver_monitoring": null,
+				"labels": {
+					"example_key": "example_value",
+				},
+				"name": "my-instance",
+				"network_config": [
+					{
+						"ip_allocation": "10.89.48.0/22",
+						"network":       "default",
+					},
+				],
+				"options":          null,
+				"private_instance": true,
+				"region":           "us-central1",
+				"timeouts":         null,
+				"type":             "BASIC",
+				"version":          "6.3.0",
+			},
+		},
+	},
+}
+
+variables = {}
+
+resource_changes = {
+	"google_data_fusion_instance.extended_instance": {
+		"address": "google_data_fusion_instance.extended_instance",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"dataproc_service_account":      null,
+				"description":                   "My Data Fusion instance",
+				"enable_stackdriver_logging":    null,
+				"enable_stackdriver_monitoring": null,
+				"labels": {
+					"example_key": "example_value",
+				},
+				"name": "my-instance",
+				"network_config": [
+					{
+						"ip_allocation": "10.89.48.0/22",
+						"network":       "default",
+					},
+				],
+				"options":          null,
+				"private_instance": true,
+				"region":           "us-central1",
+				"timeouts":         null,
+				"type":             "BASIC",
+				"version":          "6.3.0",
+			},
+			"after_unknown": {
+				"create_time": true,
+				"id":          true,
+				"labels":      {},
+				"network_config": [
+					{},
+				],
+				"project":          true,
+				"service_account":  true,
+				"service_endpoint": true,
+				"state":            true,
+				"state_message":    true,
+				"update_time":      true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "extended_instance",
+		"provider_name":  "registry.terraform.io/hashicorp/google-beta",
+		"type":           "google_data_fusion_instance",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google-beta": {
+				"expressions": {
+					"project": {
+						"constant_value": "terraformpractical",
+					},
+				},
+				"name": "google-beta",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_data_fusion_instance.extended_instance",
+					"expressions": {
+						"dataproc_service_account": {
+							"references": [
+								"data.google_app_engine_default_service_account.default",
+							],
+						},
+						"description": {
+							"constant_value": "My Data Fusion instance",
+						},
+						"labels": {
+							"constant_value": {
+								"example_key": "example_value",
+							},
+						},
+						"name": {
+							"constant_value": "my-instance",
+						},
+						"network_config": [
+							{
+								"ip_allocation": {
+									"constant_value": "10.89.48.0/22",
+								},
+								"network": {
+									"constant_value": "default",
+								},
+							},
+						],
+						"private_instance": {
+							"constant_value": true,
+						},
+						"region": {
+							"constant_value": "us-central1",
+						},
+						"type": {
+							"constant_value": "BASIC",
+						},
+						"version": {
+							"constant_value": "6.3.0",
+						},
+					},
+					"mode":                "managed",
+					"name":                "extended_instance",
+					"provider_config_key": "google-beta",
+					"schema_version":      0,
+					"type":                "google_data_fusion_instance",
+				},
+				{
+					"address":             "data.google_app_engine_default_service_account.default",
+					"mode":                "data",
+					"name":                "default",
+					"provider_config_key": "google-beta",
+					"schema_version":      0,
+					"type":                "google_app_engine_default_service_account",
+				},
+			],
+		},
+	},
+	"format_version": "0.1",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_data_fusion_instance.extended_instance",
+					"mode":           "managed",
+					"name":           "extended_instance",
+					"provider_name":  "registry.terraform.io/hashicorp/google-beta",
+					"schema_version": 0,
+					"type":           "google_data_fusion_instance",
+					"values": {
+						"dataproc_service_account":      null,
+						"description":                   "My Data Fusion instance",
+						"enable_stackdriver_logging":    null,
+						"enable_stackdriver_monitoring": null,
+						"labels": {
+							"example_key": "example_value",
+						},
+						"name": "my-instance",
+						"network_config": [
+							{
+								"ip_allocation": "10.89.48.0/22",
+								"network":       "default",
+							},
+						],
+						"options":          null,
+						"private_instance": true,
+						"region":           "us-central1",
+						"timeouts":         null,
+						"type":             "BASIC",
+						"version":          "6.3.0",
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "0.1",
+		"terraform_version": "0.14.10",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":        "data.google_app_engine_default_service_account.default",
+						"mode":           "data",
+						"name":           "default",
+						"provider_name":  "registry.terraform.io/hashicorp/google-beta",
+						"schema_version": 0,
+						"type":           "google_app_engine_default_service_account",
+						"values": {
+							"display_name": null,
+							"email":        null,
+							"id":           null,
+							"name":         null,
+							"project":      null,
+							"unique_id":    null,
+						},
+					},
+				],
+			},
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_data_fusion_instance.extended_instance",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"dataproc_service_account":      null,
+					"description":                   "My Data Fusion instance",
+					"enable_stackdriver_logging":    null,
+					"enable_stackdriver_monitoring": null,
+					"labels": {
+						"example_key": "example_value",
+					},
+					"name": "my-instance",
+					"network_config": [
+						{
+							"ip_allocation": "10.89.48.0/22",
+							"network":       "default",
+						},
+					],
+					"options":          null,
+					"private_instance": true,
+					"region":           "us-central1",
+					"timeouts":         null,
+					"type":             "BASIC",
+					"version":          "6.3.0",
+				},
+				"after_unknown": {
+					"create_time": true,
+					"id":          true,
+					"labels":      {},
+					"network_config": [
+						{},
+					],
+					"project":          true,
+					"service_account":  true,
+					"service_endpoint": true,
+					"state":            true,
+					"state_message":    true,
+					"update_time":      true,
+				},
+				"before": null,
+			},
+			"mode":          "managed",
+			"name":          "extended_instance",
+			"provider_name": "registry.terraform.io/hashicorp/google-beta",
+			"type":          "google_data_fusion_instance",
+		},
+	],
+	"terraform_version": "0.14.10",
+}

@@ -38,3 +38,18 @@ size-of-filestore/sample deployment/success/.terraform/
 size-of-filestore/sample deployment/success/run-jPNescUZWM6kz8RQ-sentinel-mocks
 size-of-filestore/sample deployment/success/run-jPNescUZWM6kz8RQ-sentinel-mocks.tar.gz
 
+notebook-instance-secure/.sentinel
+notebook-instance-secure/sample deployment/failure/.terraform/
+notebook-instance-secure/sample deployment/failure/run-EGB98noxRt6XYwnv-sentinel-mocks
+notebook-instance-secure/sample deployment/failure/run-EGB98noxRt6XYwnv-sentinel-mocks.tar.gz
+notebook-instance-secure/sample deployment/success/.terraform/
+notebook-instance-secure/sample deployment/success/run-TyNBpBpyaB4wYFVp-sentinel-mocks
+notebook-instance-secure/sample deployment/success/run-TyNBpBpyaB4wYFVp-sentinel-mocks.tar.gz
+
+datafusion-instance-logging/.sentinel
+datafusion-instance-logging/sample deployment/failure/.terraform/
+datafusion-instance-logging/sample deployment/failure/run-4aCxmAF7QqcVxtez-sentinel-mocks
+datafusion-instance-logging/sample deployment/failure/run-4aCxmAF7QqcVxtez-sentinel-mocks.tar.gz
+datafusion-instance-logging/sample deployment/success/.terraform/
+datafusion-instance-logging/sample deployment/success/run-ZaYrwChLqsozcXCa-sentinel-mocks
+datafusion-instance-logging/sample deployment/success/run-ZaYrwChLqsozcXCa-sentinel-mocks.tar.gz

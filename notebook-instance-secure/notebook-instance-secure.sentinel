@@ -1,0 +1,17 @@
+import "tfplan-functions" as plan
+import "tfplan/v2" as tfplan
+
+instance_resources = plan.find_resources("google_notebooks_instance")
+
+shielded_config_block_is_present = rule{
+    all instance_resources as _,rc{
+        (rc.change.after_unknown.shielded_instance_config is not true) and
+        (rc.change.after.shielded_instance_config[0].enable_integrity_monitoring is true) and
+        (rc.change.after.shielded_instance_config[0].enable_secure_boot is true) and
+        (rc.change.after.shielded_instance_config[0].enable_vtpm is true)
+    }
+}
+
+main = rule{
+    shielded_config_block_is_present
+}

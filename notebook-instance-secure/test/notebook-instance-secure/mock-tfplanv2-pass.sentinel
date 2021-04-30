@@ -1,0 +1,524 @@
+terraform_version = "0.14.10"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_notebooks_instance.instance": {
+			"address":        "google_notebooks_instance.instance",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "instance",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_notebooks_instance",
+			"values": {
+				"accelerator_config": [
+					{
+						"core_count": 1,
+						"type":       "NVIDIA_TESLA_T4",
+					},
+				],
+				"boot_disk_size_gb":      110,
+				"boot_disk_type":         "PD_SSD",
+				"container_image":        [],
+				"custom_gpu_driver_path": null,
+				"data_disk_size_gb":      null,
+				"data_disk_type":         null,
+				"disk_encryption":        null,
+				"install_gpu_driver":     true,
+				"instance_owners":        null,
+				"kms_key":                null,
+				"labels": {
+					"k": "val",
+				},
+				"location":     "us-central1-a",
+				"machine_type": "n1-standard-1",
+				"metadata": {
+					"terraform": "true",
+				},
+				"name":                   "notebooks-instance",
+				"network":                "projects/terraformpractical/global/networks/default",
+				"no_proxy_access":        true,
+				"no_public_ip":           true,
+				"no_remove_data_disk":    null,
+				"post_startup_script":    null,
+				"service_account_scopes": null,
+				"shielded_instance_config": [
+					{
+						"enable_integrity_monitoring": true,
+						"enable_secure_boot":          true,
+						"enable_vtpm":                 true,
+					},
+				],
+				"subnet":   "projects/terraformpractical/regions/us-central1/subnetworks/default",
+				"tags":     null,
+				"timeouts": null,
+				"vm_image": [
+					{
+						"image_family": "tf-latest-cpu",
+						"image_name":   null,
+						"project":      "deeplearning-platform-release",
+					},
+				],
+			},
+		},
+	},
+}
+
+variables = {}
+
+resource_changes = {
+	"google_notebooks_instance.instance": {
+		"address": "google_notebooks_instance.instance",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"accelerator_config": [
+					{
+						"core_count": 1,
+						"type":       "NVIDIA_TESLA_T4",
+					},
+				],
+				"boot_disk_size_gb":      110,
+				"boot_disk_type":         "PD_SSD",
+				"container_image":        [],
+				"custom_gpu_driver_path": null,
+				"data_disk_size_gb":      null,
+				"data_disk_type":         null,
+				"disk_encryption":        null,
+				"install_gpu_driver":     true,
+				"instance_owners":        null,
+				"kms_key":                null,
+				"labels": {
+					"k": "val",
+				},
+				"location":     "us-central1-a",
+				"machine_type": "n1-standard-1",
+				"metadata": {
+					"terraform": "true",
+				},
+				"name":                   "notebooks-instance",
+				"network":                "projects/terraformpractical/global/networks/default",
+				"no_proxy_access":        true,
+				"no_public_ip":           true,
+				"no_remove_data_disk":    null,
+				"post_startup_script":    null,
+				"service_account_scopes": null,
+				"shielded_instance_config": [
+					{
+						"enable_integrity_monitoring": true,
+						"enable_secure_boot":          true,
+						"enable_vtpm":                 true,
+					},
+				],
+				"subnet":   "projects/terraformpractical/regions/us-central1/subnetworks/default",
+				"tags":     null,
+				"timeouts": null,
+				"vm_image": [
+					{
+						"image_family": "tf-latest-cpu",
+						"image_name":   null,
+						"project":      "deeplearning-platform-release",
+					},
+				],
+			},
+			"after_unknown": {
+				"accelerator_config": [
+					{},
+				],
+				"container_image": [],
+				"create_time":     true,
+				"id":              true,
+				"labels":          {},
+				"metadata":        {},
+				"project":         true,
+				"proxy_uri":       true,
+				"service_account": true,
+				"shielded_instance_config": [
+					{},
+				],
+				"state":       true,
+				"update_time": true,
+				"vm_image": [
+					{},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "instance",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_notebooks_instance",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"expressions": {
+					"project": {
+						"constant_value": "terraformpractical",
+					},
+				},
+				"name": "google",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_notebooks_instance.instance",
+					"expressions": {
+						"accelerator_config": [
+							{
+								"core_count": {
+									"constant_value": 1,
+								},
+								"type": {
+									"constant_value": "NVIDIA_TESLA_T4",
+								},
+							},
+						],
+						"boot_disk_size_gb": {
+							"constant_value": 110,
+						},
+						"boot_disk_type": {
+							"constant_value": "PD_SSD",
+						},
+						"install_gpu_driver": {
+							"constant_value": true,
+						},
+						"labels": {
+							"constant_value": {
+								"k": "val",
+							},
+						},
+						"location": {
+							"constant_value": "us-central1-a",
+						},
+						"machine_type": {
+							"constant_value": "n1-standard-1",
+						},
+						"metadata": {
+							"constant_value": {
+								"terraform": "true",
+							},
+						},
+						"name": {
+							"constant_value": "notebooks-instance",
+						},
+						"network": {
+							"references": [
+								"data.google_compute_network.my_network",
+							],
+						},
+						"no_proxy_access": {
+							"constant_value": true,
+						},
+						"no_public_ip": {
+							"constant_value": true,
+						},
+						"shielded_instance_config": [
+							{
+								"enable_integrity_monitoring": {
+									"constant_value": true,
+								},
+								"enable_secure_boot": {
+									"constant_value": true,
+								},
+								"enable_vtpm": {
+									"constant_value": true,
+								},
+							},
+						],
+						"subnet": {
+							"references": [
+								"data.google_compute_subnetwork.my_subnetwork",
+							],
+						},
+						"vm_image": [
+							{
+								"image_family": {
+									"constant_value": "tf-latest-cpu",
+								},
+								"project": {
+									"constant_value": "deeplearning-platform-release",
+								},
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "instance",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_notebooks_instance",
+				},
+				{
+					"address": "data.google_compute_network.my_network",
+					"expressions": {
+						"name": {
+							"constant_value": "default",
+						},
+					},
+					"mode":                "data",
+					"name":                "my_network",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_compute_network",
+				},
+				{
+					"address": "data.google_compute_subnetwork.my_subnetwork",
+					"expressions": {
+						"name": {
+							"constant_value": "default",
+						},
+						"region": {
+							"constant_value": "us-central1",
+						},
+					},
+					"mode":                "data",
+					"name":                "my_subnetwork",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_compute_subnetwork",
+				},
+			],
+		},
+	},
+	"format_version": "0.1",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_notebooks_instance.instance",
+					"mode":           "managed",
+					"name":           "instance",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"type":           "google_notebooks_instance",
+					"values": {
+						"accelerator_config": [
+							{
+								"core_count": 1,
+								"type":       "NVIDIA_TESLA_T4",
+							},
+						],
+						"boot_disk_size_gb":      110,
+						"boot_disk_type":         "PD_SSD",
+						"container_image":        [],
+						"custom_gpu_driver_path": null,
+						"data_disk_size_gb":      null,
+						"data_disk_type":         null,
+						"disk_encryption":        null,
+						"install_gpu_driver":     true,
+						"instance_owners":        null,
+						"kms_key":                null,
+						"labels": {
+							"k": "val",
+						},
+						"location":     "us-central1-a",
+						"machine_type": "n1-standard-1",
+						"metadata": {
+							"terraform": "true",
+						},
+						"name":                   "notebooks-instance",
+						"network":                "projects/terraformpractical/global/networks/default",
+						"no_proxy_access":        true,
+						"no_public_ip":           true,
+						"no_remove_data_disk":    null,
+						"post_startup_script":    null,
+						"service_account_scopes": null,
+						"shielded_instance_config": [
+							{
+								"enable_integrity_monitoring": true,
+								"enable_secure_boot":          true,
+								"enable_vtpm":                 true,
+							},
+						],
+						"subnet":   "projects/terraformpractical/regions/us-central1/subnetworks/default",
+						"tags":     null,
+						"timeouts": null,
+						"vm_image": [
+							{
+								"image_family": "tf-latest-cpu",
+								"image_name":   null,
+								"project":      "deeplearning-platform-release",
+							},
+						],
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "0.1",
+		"terraform_version": "0.14.10",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":        "data.google_compute_network.my_network",
+						"mode":           "data",
+						"name":           "my_network",
+						"provider_name":  "registry.terraform.io/hashicorp/google",
+						"schema_version": 0,
+						"type":           "google_compute_network",
+						"values": {
+							"description":  "Default network for the project",
+							"gateway_ipv4": "",
+							"id":           "projects/terraformpractical/global/networks/default",
+							"name":         "default",
+							"project":      null,
+							"self_link":    "https://www.googleapis.com/compute/v1/projects/terraformpractical/global/networks/default",
+							"subnetworks_self_links": [
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-west2/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-northeast1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/europe-west4/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-east1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/europe-west3/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-west4/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/europe-west1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/europe-north1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/southamerica-east1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/northamerica-northeast1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-east1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/europe-west2/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/australia-southeast1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-west1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-east4/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/europe-west6/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/europe-central2/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-east2/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-northeast3/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-west3/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-central1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-northeast2/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-southeast2/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-south1/subnetworks/default",
+								"https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/asia-southeast1/subnetworks/default",
+							],
+						},
+					},
+					{
+						"address":        "data.google_compute_subnetwork.my_subnetwork",
+						"mode":           "data",
+						"name":           "my_subnetwork",
+						"provider_name":  "registry.terraform.io/hashicorp/google",
+						"schema_version": 0,
+						"type":           "google_compute_subnetwork",
+						"values": {
+							"description":              "",
+							"gateway_address":          "10.128.0.1",
+							"id":                       "projects/terraformpractical/regions/us-central1/subnetworks/default",
+							"ip_cidr_range":            "10.128.0.0/20",
+							"name":                     "default",
+							"network":                  "https://www.googleapis.com/compute/v1/projects/terraformpractical/global/networks/default",
+							"private_ip_google_access": false,
+							"project":                  "terraformpractical",
+							"region":                   "us-central1",
+							"secondary_ip_range":       [],
+							"self_link":                "https://www.googleapis.com/compute/v1/projects/terraformpractical/regions/us-central1/subnetworks/default",
+						},
+					},
+				],
+			},
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_notebooks_instance.instance",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"accelerator_config": [
+						{
+							"core_count": 1,
+							"type":       "NVIDIA_TESLA_T4",
+						},
+					],
+					"boot_disk_size_gb":      110,
+					"boot_disk_type":         "PD_SSD",
+					"container_image":        [],
+					"custom_gpu_driver_path": null,
+					"data_disk_size_gb":      null,
+					"data_disk_type":         null,
+					"disk_encryption":        null,
+					"install_gpu_driver":     true,
+					"instance_owners":        null,
+					"kms_key":                null,
+					"labels": {
+						"k": "val",
+					},
+					"location":     "us-central1-a",
+					"machine_type": "n1-standard-1",
+					"metadata": {
+						"terraform": "true",
+					},
+					"name":                   "notebooks-instance",
+					"network":                "projects/terraformpractical/global/networks/default",
+					"no_proxy_access":        true,
+					"no_public_ip":           true,
+					"no_remove_data_disk":    null,
+					"post_startup_script":    null,
+					"service_account_scopes": null,
+					"shielded_instance_config": [
+						{
+							"enable_integrity_monitoring": true,
+							"enable_secure_boot":          true,
+							"enable_vtpm":                 true,
+						},
+					],
+					"subnet":   "projects/terraformpractical/regions/us-central1/subnetworks/default",
+					"tags":     null,
+					"timeouts": null,
+					"vm_image": [
+						{
+							"image_family": "tf-latest-cpu",
+							"image_name":   null,
+							"project":      "deeplearning-platform-release",
+						},
+					],
+				},
+				"after_unknown": {
+					"accelerator_config": [
+						{},
+					],
+					"container_image": [],
+					"create_time":     true,
+					"id":              true,
+					"labels":          {},
+					"metadata":        {},
+					"project":         true,
+					"proxy_uri":       true,
+					"service_account": true,
+					"shielded_instance_config": [
+						{},
+					],
+					"state":       true,
+					"update_time": true,
+					"vm_image": [
+						{},
+					],
+				},
+				"before": null,
+			},
+			"mode":          "managed",
+			"name":          "instance",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_notebooks_instance",
+		},
+	],
+	"terraform_version": "0.14.10",
+}
